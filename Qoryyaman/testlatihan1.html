@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<title>Latihan</title>
+<head>
+<script>
+function loadXMLDOC(){
+var xmlhttp;
+if (window.XMLHttpRequest){//code untuk IE7+, Firefox, Chrom, Opera, Safari
+	xmlhttp=new XMLHttpRequest();
+} else {//code untuk IE6, IE5
+	xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+}
+	xmlhttp.onreadystatechange=function(){
+		if (xmlhttp.readyState==4 && xmlhttp.status==200){
+				document.getElementById("isi").innerHTML=xmlhttp.responseText;
+			}
+		}
+	xmlhttp.open("GET","text1.xml",true);
+	xmlhttp.send();
+}
+function loadXMLDOC1(){
+var xmlhttp;
+if (window.XMLHttpRequest){//code untuk IE7+, Firefox, Chrom, Opera, Safari
+	xmlhttp=new XMLHttpRequest();
+} else {//code untuk IE6, IE5
+	xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+}
+	xmlhttp.onreadystatechange=function(){
+		if (xmlhttp.readyState==4 && xmlhttp.status==200){
+				document.getElementById("isi").innerHTML=xmlhttp.responseText;
+			}
+		}
+	xmlhttp.open("GET","latihan1.xml",true);
+	xmlhttp.send();
+}
+
+</script>
+</head>
+
+<body>
+	<div id="isi">
+	<h2>Kalimat Utama Sebelum Diubah</h2></div>
+	<button type="button" onclick="loadXMLDOC()">Ubah Tulisan Di Atas</button>
+	<button type="button" onclick="loadXMLDOC1()">Tampilkan data diri</button>
+</body>
+
+</html>
