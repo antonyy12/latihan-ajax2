@@ -17,6 +17,22 @@ if (window.XMLHttpRequest){//code untuk IE7+, Firefox, Chrom, Opera, Safari
 	xmlhttp.open("GET","text1.xml",true);
 	xmlhttp.send();
 }
+	
+function loadXMLDOC3(){
+var xmlhttp;
+if (window.XMLHttpRequest){//code untuk IE7+, Firefox, Chrom, Opera, Safari
+	xmlhttp=new XMLHttpRequest();
+} else {//code untuk IE6, IE5
+	xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+}
+	xmlhttp.onreadystatechange=function(){
+		if (xmlhttp.readyState==4 && xmlhttp.status==200){
+				document.getElementById("isi").innerHTML=xmlhttp.responseText;
+			}
+		}
+	xmlhttp.open("GET","text3.xml",true);
+	xmlhttp.send();
+}
 </script>
 </head>
 
@@ -24,6 +40,7 @@ if (window.XMLHttpRequest){//code untuk IE7+, Firefox, Chrom, Opera, Safari
 	<div id="isi">
 	<h2>Kalimat Utama Sebelum Diubah</h2></div>
 	<button type="button" onclick="loadXMLDOC()">Ubah Tulisan Di Atas</button>
+	<button type="button" onclick="loadXMLDOC3()">Tampilkan Data Diri</button>
 </body>
 
 </html>
